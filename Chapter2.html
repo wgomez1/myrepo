@@ -1,702 +1,252 @@
-
-
-<!DOCTYPE html>
-
-
-<html lang="en" >
-
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
-    <title>dyndoc &#8212; Adv. Stata</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
-
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter2';</script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="References" href="Chapter3.html" />
-    <link rel="prev" title="Abstract" href="Chapter1.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
-  </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
-      
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="intro.html">
-  
-  
-  
-  
-    
-    
-      
-    
-    
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
-                    Welcome to My Advanced Stata Book
-                </a>
-            </li>
-        </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Chapter1.html">Abstract</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">dyndoc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Chapter3.html">References</a></li>
-</ul>
-
-    </div>
-</nav></div>
-    </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
-
-
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FChapter2.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="_sources/Chapter2.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
-  
-</div>
-</div>
-              
-              
-
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>dyndoc</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adapted-stata-code-and-the-dyndoc-command">Adapted Stata code and the dyndoc command</a></li>
-</ul>
-            </nav>
-        </div>
-    </div>
-</div>
-
-              
-                
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <section class="tex2jax_ignore mathjax_ignore" id="dyndoc">
-<h1>dyndoc<a class="headerlink" href="#dyndoc" title="Permalink to this heading">#</a></h1>
-<section id="adapted-stata-code-and-the-dyndoc-command">
-<h2>Adapted Stata code and the dyndoc command<a class="headerlink" href="#adapted-stata-code-and-the-dyndoc-command" title="Permalink to this heading">#</a></h2>
-<p>Below you will find the adapted Stata code used to produce the graph included in the abstract.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>capture program drop nhanes
-program define nhanes 
-    
-	preserve 
-	    
-		qui {
-			
-			if 0 { //background:r(mean) 
-				
-				1. Stata/BE or IC
-				2. r(k) &lt; 2048
-				3. exam.DAT: r(k) == 2368
-				4. inaccessible to jhustata
-				5. program to grant access
-				
-			}
-			
-			if 1 { //methods:$keepvars
-				
-				timer on 1
-				
-				global github https://raw.githubusercontent.com/
-				global jhustata jhustata/book/main/
-				global keepvars HSAGEIR BMPHT BMPWT HAZA8AK1 CEP GHP HAB1
-				
-				timer off 1
-											
-			}
-			
-			if 2 { //results:.dofiles
-			
-			    timer on 2
-				
-				clear
-				
-				do ${github}${$jhustata}nh3mort.do 
-				
-				if c(edition_real) == &quot;BE&quot;  | c(edition_real) == &quot;IC&quot; {
-					
-					clear 
-					
-					do ${github}${$jhustata}nhanes-alpha-if2.do 
-					
-				}
-				
-				else { 
-					
-					clear 
-					
-					do ${github}${$jhustata}nhanes-alpha-if0.do
-					
-				}
-				
-				
-				timer off 2
-				
-			}
-			
-			if 3 { //conclusions:queueing
-			
-			    timer on 3
-			
-			    timer on 31
-				clear
-				do adult.do
-				rename *,lower
-				save adult.dta,replace 
-				timer off 31
-				
-				timer on 32
-				clear 
-				do exam.do
-				rename *,lower
-				save exam.dta,replace 
-				timer off 32
-				
-				timer on 33
-				clear
-				do lab.do
-				rename *,lower
-				save lab.dta,replace 
-				timer off 33
-				
-				timer off 3
-				
-			}
-
-			if 4 { //acknowledge:linkage
-				
-				timer on 4
-				
-				use adult, clear
-				merge 1:1 seqn using exam,nogen
-				merge 1:1 seqn using lab,nogen
-				merge 1:1 seqn using nh3mort,nogen keep(matched)
-				
-				timer off 4
-				
-			}
-			
-			if 5 { //dataset4class:
-				
-				timer on 5
-				
-				compress
-				lab dat &quot;NHANES 1988-1994, survey &amp; mortality&quot;
-				save &quot;nh3andmort.dta&quot;, replace 
-				
-				timer off 5
-				
-			}
-			
-			if 6 { //survivalanalysis:
-				
-				timer on 6
-				
-        		lookfor mort
-        		codebook mortstat
-        		lookfor follow
-        		g years=permth_exm/12
-
-        		lookfor health
-        		codebook hab1
-        		global subgroup: var lab hab1
-    
-        		stset years, fail(mortstat)
-
-        		#delimit ;
-        		sts graph if inrange(hab1,1,5),
-        		   by(hab1)
-        		   fail
-        		   ti(&quot;Morality in NHANES III&quot;,pos(11))
-        		   subti(&quot;by self report: ${subgroup}&quot;,pos(11))
-        		   yti(&quot;%&quot;,orientation(horizontal))
-        		   xti(&quot;Years&quot;)
-        		   per(100)
-        		   ylab(0(20)80,
-        		       format(%3.0f)
-        		       angle(360)
-        		   )
-        		   legend(on
-        		       lab(1 &quot;Excellent&quot;)
-        		       lab(2 &quot;Good&quot;)
-        		       lab(3 &quot;Fair&quot;)
-        		       lab(4 &quot;Bad&quot;)
-        		       lab(5 &quot;Poor&quot;)
-        		       ring(0)
-        		       pos(11)
-        		       col(1)
-        		       order(5 4 3 2 1)
-        		   )
-        		   note(&quot;Source: RDC/NCHS/CDC/DHHS&quot;)  
-        		;
-        		#delimit cr
-        		
-        		graph export nh3andmort.png,replace 
-        		
-        		stcox i.hab1 if inrange(hab1,1,5)
-		
-		
-				timer off 6
-				
-			}
-			
-			noi timer list 
-			
-		}
-			
-	restore 
-	
-end 
-
-nhanes 
-
-pwd 
-
-ls -l
-
-use nh3andmort.dta, clear 
-
-di c(N) &quot; &amp; &quot; c(k) //
-//19599 &amp; 3643
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">138</span>
-    <span class="nb">format</span><span class="p">(</span><span class="o">%</span><span class="k">3</span>.0f)
-              <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid decimal literal
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;/Users/wilsongomez/Dropbox/VS Code/mybook/nh3andmort.png&quot;</span><span class="p">)</span>
-<span class="n">img</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>To see the full abstract output using the Stata dyndoc commmand, see [Abstract](file:///Users/wilsongomez/Dropbox/VS%20Code/mybook/nhanes_1.html)</p>
-</section>
-</section>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            name: "python3",
-            path: "./."
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-                </article>
-              
-
-              
-              
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="Chapter1.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Abstract</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Chapter3.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">References</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div></div>
-  
-</div>
-
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adapted-stata-code-and-the-dyndoc-command">Adapted Stata code and the dyndoc command</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Wilson Gomez
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2022.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
-    </div>
-  </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
-
-  <footer class="bd-footer">
-  </footer>
-  </body>
-</html>
+{
+ "cells": [
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# dyndoc \n",
+    "## Adapted Stata code and the dyndoc command\n",
+    "\n",
+    "Below you will find the adapted Stata code used to produce the graph included in the abstract."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "capture program drop nhanes\n",
+    "program define nhanes \n",
+    "    \n",
+    "\tpreserve \n",
+    "\t    \n",
+    "\t\tqui {\n",
+    "\t\t\t\n",
+    "\t\t\tif 0 { //background:r(mean) \n",
+    "\t\t\t\t\n",
+    "\t\t\t\t1. Stata/BE or IC\n",
+    "\t\t\t\t2. r(k) < 2048\n",
+    "\t\t\t\t3. exam.DAT: r(k) == 2368\n",
+    "\t\t\t\t4. inaccessible to jhustata\n",
+    "\t\t\t\t5. program to grant access\n",
+    "\t\t\t\t\n",
+    "\t\t\t}\n",
+    "\t\t\t\n",
+    "\t\t\tif 1 { //methods:$keepvars\n",
+    "\t\t\t\t\n",
+    "\t\t\t\ttimer on 1\n",
+    "\t\t\t\t\n",
+    "\t\t\t\tglobal github https://raw.githubusercontent.com/\n",
+    "\t\t\t\tglobal jhustata jhustata/book/main/\n",
+    "\t\t\t\tglobal keepvars HSAGEIR BMPHT BMPWT HAZA8AK1 CEP GHP HAB1\n",
+    "\t\t\t\t\n",
+    "\t\t\t\ttimer off 1\n",
+    "\t\t\t\t\t\t\t\t\t\t\t\n",
+    "\t\t\t}\n",
+    "\t\t\t\n",
+    "\t\t\tif 2 { //results:.dofiles\n",
+    "\t\t\t\n",
+    "\t\t\t    timer on 2\n",
+    "\t\t\t\t\n",
+    "\t\t\t\tclear\n",
+    "\t\t\t\t\n",
+    "\t\t\t\tdo ${github}${$jhustata}nh3mort.do \n",
+    "\t\t\t\t\n",
+    "\t\t\t\tif c(edition_real) == \"BE\"  | c(edition_real) == \"IC\" {\n",
+    "\t\t\t\t\t\n",
+    "\t\t\t\t\tclear \n",
+    "\t\t\t\t\t\n",
+    "\t\t\t\t\tdo ${github}${$jhustata}nhanes-alpha-if2.do \n",
+    "\t\t\t\t\t\n",
+    "\t\t\t\t}\n",
+    "\t\t\t\t\n",
+    "\t\t\t\telse { \n",
+    "\t\t\t\t\t\n",
+    "\t\t\t\t\tclear \n",
+    "\t\t\t\t\t\n",
+    "\t\t\t\t\tdo ${github}${$jhustata}nhanes-alpha-if0.do\n",
+    "\t\t\t\t\t\n",
+    "\t\t\t\t}\n",
+    "\t\t\t\t\n",
+    "\t\t\t\t\n",
+    "\t\t\t\ttimer off 2\n",
+    "\t\t\t\t\n",
+    "\t\t\t}\n",
+    "\t\t\t\n",
+    "\t\t\tif 3 { //conclusions:queueing\n",
+    "\t\t\t\n",
+    "\t\t\t    timer on 3\n",
+    "\t\t\t\n",
+    "\t\t\t    timer on 31\n",
+    "\t\t\t\tclear\n",
+    "\t\t\t\tdo adult.do\n",
+    "\t\t\t\trename *,lower\n",
+    "\t\t\t\tsave adult.dta,replace \n",
+    "\t\t\t\ttimer off 31\n",
+    "\t\t\t\t\n",
+    "\t\t\t\ttimer on 32\n",
+    "\t\t\t\tclear \n",
+    "\t\t\t\tdo exam.do\n",
+    "\t\t\t\trename *,lower\n",
+    "\t\t\t\tsave exam.dta,replace \n",
+    "\t\t\t\ttimer off 32\n",
+    "\t\t\t\t\n",
+    "\t\t\t\ttimer on 33\n",
+    "\t\t\t\tclear\n",
+    "\t\t\t\tdo lab.do\n",
+    "\t\t\t\trename *,lower\n",
+    "\t\t\t\tsave lab.dta,replace \n",
+    "\t\t\t\ttimer off 33\n",
+    "\t\t\t\t\n",
+    "\t\t\t\ttimer off 3\n",
+    "\t\t\t\t\n",
+    "\t\t\t}\n",
+    "\n",
+    "\t\t\tif 4 { //acknowledge:linkage\n",
+    "\t\t\t\t\n",
+    "\t\t\t\ttimer on 4\n",
+    "\t\t\t\t\n",
+    "\t\t\t\tuse adult, clear\n",
+    "\t\t\t\tmerge 1:1 seqn using exam,nogen\n",
+    "\t\t\t\tmerge 1:1 seqn using lab,nogen\n",
+    "\t\t\t\tmerge 1:1 seqn using nh3mort,nogen keep(matched)\n",
+    "\t\t\t\t\n",
+    "\t\t\t\ttimer off 4\n",
+    "\t\t\t\t\n",
+    "\t\t\t}\n",
+    "\t\t\t\n",
+    "\t\t\tif 5 { //dataset4class:\n",
+    "\t\t\t\t\n",
+    "\t\t\t\ttimer on 5\n",
+    "\t\t\t\t\n",
+    "\t\t\t\tcompress\n",
+    "\t\t\t\tlab dat \"NHANES 1988-1994, survey & mortality\"\n",
+    "\t\t\t\tsave \"nh3andmort.dta\", replace \n",
+    "\t\t\t\t\n",
+    "\t\t\t\ttimer off 5\n",
+    "\t\t\t\t\n",
+    "\t\t\t}\n",
+    "\t\t\t\n",
+    "\t\t\tif 6 { //survivalanalysis:\n",
+    "\t\t\t\t\n",
+    "\t\t\t\ttimer on 6\n",
+    "\t\t\t\t\n",
+    "        \t\tlookfor mort\n",
+    "        \t\tcodebook mortstat\n",
+    "        \t\tlookfor follow\n",
+    "        \t\tg years=permth_exm/12\n",
+    "\n",
+    "        \t\tlookfor health\n",
+    "        \t\tcodebook hab1\n",
+    "        \t\tglobal subgroup: var lab hab1\n",
+    "    \n",
+    "        \t\tstset years, fail(mortstat)\n",
+    "\n",
+    "        \t\t#delimit ;\n",
+    "        \t\tsts graph if inrange(hab1,1,5),\n",
+    "        \t\t   by(hab1)\n",
+    "        \t\t   fail\n",
+    "        \t\t   ti(\"Morality in NHANES III\",pos(11))\n",
+    "        \t\t   subti(\"by self report: ${subgroup}\",pos(11))\n",
+    "        \t\t   yti(\"%\",orientation(horizontal))\n",
+    "        \t\t   xti(\"Years\")\n",
+    "        \t\t   per(100)\n",
+    "        \t\t   ylab(0(20)80,\n",
+    "        \t\t       format(%3.0f)\n",
+    "        \t\t       angle(360)\n",
+    "        \t\t   )\n",
+    "        \t\t   legend(on\n",
+    "        \t\t       lab(1 \"Excellent\")\n",
+    "        \t\t       lab(2 \"Good\")\n",
+    "        \t\t       lab(3 \"Fair\")\n",
+    "        \t\t       lab(4 \"Bad\")\n",
+    "        \t\t       lab(5 \"Poor\")\n",
+    "        \t\t       ring(0)\n",
+    "        \t\t       pos(11)\n",
+    "        \t\t       col(1)\n",
+    "        \t\t       order(5 4 3 2 1)\n",
+    "        \t\t   )\n",
+    "        \t\t   note(\"Source: RDC/NCHS/CDC/DHHS\")  \n",
+    "        \t\t;\n",
+    "        \t\t#delimit cr\n",
+    "        \t\t\n",
+    "        \t\tgraph export nh3andmort.png,replace \n",
+    "        \t\t\n",
+    "        \t\tstcox i.hab1 if inrange(hab1,1,5)\n",
+    "\t\t\n",
+    "\t\t\n",
+    "\t\t\t\ttimer off 6\n",
+    "\t\t\t\t\n",
+    "\t\t\t}\n",
+    "\t\t\t\n",
+    "\t\t\tnoi timer list \n",
+    "\t\t\t\n",
+    "\t\t}\n",
+    "\t\t\t\n",
+    "\trestore \n",
+    "\t\n",
+    "end \n",
+    "\n",
+    "nhanes \n",
+    "\n",
+    "pwd \n",
+    "\n",
+    "ls -l\n",
+    "\n",
+    "use nh3andmort.dta, clear \n",
+    "\n",
+    "di c(N) \" & \" c(k) //\n",
+    "//19599 & 3643"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from PIL import Image\n",
+    "img = Image.open(\"/Users/wilsongomez/Dropbox/VS Code/mybook/nh3andmort.png\")\n",
+    "img.show()"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "To see the full abstract output using the Stata dyndoc commmand, see [dyndoc output](file:///Users/wilsongomez/Dropbox/VS%20Code/myrepo/_build/html/Chapter4.html)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.0"
+  },
+  "widgets": {
+   "application/vnd.jupyter.widget-state+json": {
+    "state": {},
+    "version_major": 2,
+    "version_minor": 0
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
