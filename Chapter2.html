@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Adapted Stata code and the dyndoc command &#8212; Adv. Stata</title>
+    <title>dyndoc &#8212; Adv. Stata</title>
   
   
   
@@ -158,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Chapter1.html">Abstract</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Adapted Stata code and the dyndoc command</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">dyndoc</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Chapter3.html">References</a></li>
 </ul>
 
@@ -330,7 +330,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -341,11 +343,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Adapted Stata code and the dyndoc command</h1>
+    <h1>dyndoc</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adapted-stata-code-and-the-dyndoc-command">Adapted Stata code and the dyndoc command</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -355,8 +365,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="adapted-stata-code-and-the-dyndoc-command">
-<h1>Adapted Stata code and the dyndoc command<a class="headerlink" href="#adapted-stata-code-and-the-dyndoc-command" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="dyndoc">
+<h1>dyndoc<a class="headerlink" href="#dyndoc" title="Permalink to this heading">#</a></h1>
+<section id="adapted-stata-code-and-the-dyndoc-command">
+<h2>Adapted Stata code and the dyndoc command<a class="headerlink" href="#adapted-stata-code-and-the-dyndoc-command" title="Permalink to this heading">#</a></h2>
 <p>Below you will find the adapted Stata code used to produce the graph included in the abstract.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -554,8 +566,16 @@ di c(N) &quot; &amp; &quot; c(k) //
 </div>
 </div>
 </div>
-<p><img alt="image.png" src="attachment:image.png" /></p>
-<p>To see the full abstract output using the Stata dyndoc commmand, see [Abstract using Stata dyndoc command] (file:///Users/wilsongomez/Dropbox/VS%20Code/mybook/nhanes.html)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;/Users/wilsongomez/Dropbox/VS Code/mybook/nh3andmort.png&quot;</span><span class="p">)</span>
+<span class="n">img</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To see the full abstract output using the Stata dyndoc commmand, see [Abstract](file:///Users/wilsongomez/Dropbox/VS%20Code/mybook/nhanes_1.html)</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -616,6 +636,20 @@ di c(N) &quot; &amp; &quot; c(k) //
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adapted-stata-code-and-the-dyndoc-command">Adapted Stata code and the dyndoc command</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
