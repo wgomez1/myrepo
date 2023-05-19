@@ -32,23 +32,7 @@ To see the code used to create the US Mortality Trends graph, see [dyndoc](https
 
 **Results:** 
 The program imported the NHANES US mortality data and displayed the trend in the graph below. 
-<<dd_do:nooutput>>
-qui do https://raw.githubusercontent.com/jhustata/book/main/nhanes-alpha.ado      
-set scheme s2color
-nhanes
-
-<</dd_do>>
-
-
-<<dd_graph>>
-
-
-<<dd_do>>
-
-use nh3andmort, clear
-di "obs: `c(N)' & vars: `c(k)'"  
-<</dd_do>>
-
+[Graph](file:///Users/wilsongomez/Dropbox/VS%20Code/myrepo/_build/html/nh3andmort.svg)
 
 **Conclusions:** 
 If we want to promote open science, we need softwares such as Stata to incorporate features allowing users to publish content publicly online. This project demonstrates  a way to overcome Stata's limitation. 
